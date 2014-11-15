@@ -1,9 +1,11 @@
 <html>
 <head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
-//geolocation script from https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation
+// geolocation script from https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation
 function geoFindMe() {
   var output = document.getElementById("out");
+  var map = document.getElementById("map");
 
   if (!navigator.geolocation){
     output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
@@ -13,20 +15,30 @@ function geoFindMe() {
   function success(position) {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
-
-    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+    
+    $.ajax({
+      type: "POST",
+      url: 'http://localhost:3000/',
+      data: {lat: latitude, lon: longitude},
+      success: function(data) {
+        console.log(data)
+        output.innerHTML = '<p><font size="80">' + data + '</font></p>';
+      }
+    });
+    
+    // output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
 
     var img = new Image();
     img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
 
-    output.appendChild(img);
+    map.appendChild(img);
   };
 
   function error() {
     output.innerHTML = "Unable to retrieve your location";
   };
 
-  output.innerHTML = "<p>Locating…</p>";
+  output.innerHTML = "<p>Thinking…</p>";
 
   navigator.geolocation.getCurrentPosition(success, error);
 }
@@ -34,6 +46,7 @@ window.onload = geoFindMe;
 </script>
 </head?
 <body>
-<p><button onclick="geoFindMe()">Show my location</button></p>
+
 <div id="out"></div>
+<div id="map"></div>
 </body>
