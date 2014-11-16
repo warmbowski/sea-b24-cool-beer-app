@@ -1,0 +1,12 @@
+This file for reference.
+Beer serving temperature data from: http://craftbeertemple.com/videoblog/serving-beer/
+
+{msg: 'Very Cold: 35-40 degrees', beer_list: 'American Adjunct Lagers (“Macros”), Malt Liquors, Light or low alcohol beers'};
+
+{msg: 'Cold: 40-45 degrees', beer_list: 'Pilsner, Light-bodied lagers, Kolsch, Belgian Wit, Hefeweizen, Berliner weisse, American Wheat'};
+
+{msg: 'Cool: 45-50 degrees', beer_list: 'American Pale Ales, Medium-bodied lagers, India Pale Ale (IPA), Porters, Alt, Irish Stouts, Sweet Stout'};
+
+{msg: 'Cellar Temp: 50-55 degrees', beer_list: 'Sour Ales, Lambic/Gueuze, English Bitter, Strong Ales, Baltic Porters, Bocks, Scotch Ales, Belgian Ales, Trappist Ales' };
+
+{msg: 'Warm: 55-60 degrees', beer_list: 'Imperial Stouts, Belgian Quads, Belgian Strong Ales, Barley Wines, Old Ales, Dopplebock, Eisbock'};
