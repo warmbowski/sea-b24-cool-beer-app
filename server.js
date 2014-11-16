@@ -35,7 +35,7 @@ app.post('/', function(req, res) {
     var temp = parsedData.current_observation.temp_f;
 
     if (temp >= 60) {
-      res.json({msg: 'Too warm', beer_list: 'You do not want you beer to get skunky.'});
+      res.json({msg: 'Too warm', beer_list: 'Do not put beer on the porch! You do not want you beer to get skunky.'});
     } else if (temp >= 55) {
       res.sendfile(dbFolder + 'warmBeer.json');
     } else if (temp >= 50) {
@@ -47,7 +47,7 @@ app.post('/', function(req, res) {
     } else if (temp <= 35) {
       res.sendfile(dbFolder + 'veryColdBeer.json');
     } else {
-      res.json({msg: 'Too cold', beer_list: 'You do not want your beer to freeze.'});
+      res.json({msg: 'Too cold', beer_list: 'Do not put beer on the porch! You do not want your beer to freeze.'});
     }
   });
 });

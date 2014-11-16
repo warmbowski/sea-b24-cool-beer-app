@@ -3,7 +3,7 @@
 
 <!-- <img src='https://travis-ci.org/warmbowski/sea-b24-cool-beer-app.svg'/> -->
 
-Test out on Heroku: 
+Test out on Heroku: <a href="https://whatbeercansitonmyporch.herokuapp.com/">https://whatbeercansitonmyporch.herokuapp.com/</a>
 
 Assignment for CF B24:
 
