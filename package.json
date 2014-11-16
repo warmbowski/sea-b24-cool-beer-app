@@ -2,7 +2,7 @@
   "name": "sea-b24-cool-beer-app",
   "version": "1.0.0",
   "description": "Assignment for modular js code",
-  "main": "lib/server.js",
+  "main": "server.js",
   "directories": {
     "test": "test"
   },
