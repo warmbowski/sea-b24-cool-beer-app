@@ -5,7 +5,7 @@
 
 Test out on Heroku: <a href="https://whatbeercansitonmyporch.herokuapp.com/">https://whatbeercansitonmyporch.herokuapp.com/</a>
 
-Assignment for CF B24:
+Assignment for CF B24:  
 
 Make a single page web app á la http://www.isitajewishholidaytoday.com/ (Links to an external site.) 
 
