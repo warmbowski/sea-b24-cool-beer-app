@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var request = require('superagent');
-var dbFolder = './db/';
+var dbFolder = '/db/';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,7 +29,7 @@ app.post('/', function(req, res) {
   request
   .get(wundergUrl)
   .end(function(err, wundergRes) {
-    if (err) res.sendStatus(500).send('there was a problem');
+    if (err) return res.sendStatus(500).send('there was a problem');
 
     var parsedData = JSON.parse(wundergRes.text);
     var temp = parsedData.current_observation.temp_f;
@@ -37,15 +37,15 @@ app.post('/', function(req, res) {
     if (temp >= 60) {
       res.json({msg: 'Too warm', beer_list: 'no beer'});
     } else if (temp >= 55) {
-      res.sendfile(dbFolder + 'warmBeer.json');
+      res.sendFile(__dirname + dbFolder + 'warmBeer.json');
     } else if (temp >= 50) {
-      res.sendfile(dbFolder + 'cellarBeer.json');
+      res.sendFile(__dirname + dbFolder + 'cellarBeer.json');
     } else if (temp >= 45) {
-      res.sendfile(dbFolder + 'coolBeer.json');
+      res.sendFile(__dirname + dbFolder + 'coolBeer.json');
     } else if (temp >= 40) {
-      res.sendfile(dbFolder + 'coldBeer.json');
+      res.sendFile(__dirname + dbFolder + 'coldBeer.json');
     } else if (temp <= 35) {
-      res.sendfile(dbFolder + 'veryColdBeer.json');
+      res.sendFile(__dirname + dbFolder + 'veryColdBeer.json');
     } else {
       res.json({msg: 'Too cold', beer_list: 'no beer'});
     }

@@ -1,7 +1,7 @@
 <h1>Is it cold enough to store my beer outside?</h1>
 <h3>Assignment to use external APIs</h3>
 
-<!-- <img src='https://travis-ci.org/warmbowski/sea-b24-cool-beer-app.svg'/> -->
+<img src='https://travis-ci.org/warmbowski/sea-b24-cool-beer-app.svg'/>
 
 Test out on Heroku: <a href="https://whatbeercansitonmyporch.herokuapp.com/">https://whatbeercansitonmyporch.herokuapp.com/</a>
 
