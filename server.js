@@ -34,20 +34,28 @@ app.post('/', function(req, res) {
     var parsedData = JSON.parse(wundergRes.text);
     var temp = parsedData.current_observation.temp_f;
 
-    if (temp >= 60) {
-      res.json({msg: 'Too warm', beer_list: 'no beer'});
-    } else if (temp >= 55) {
-      res.sendFile(__dirname + dbFolder + 'warmBeer.json');
-    } else if (temp >= 50) {
-      res.sendFile(__dirname + dbFolder + 'cellarBeer.json');
-    } else if (temp >= 45) {
-      res.sendFile(__dirname + dbFolder + 'coolBeer.json');
-    } else if (temp >= 40) {
-      res.sendFile(__dirname + dbFolder + 'coldBeer.json');
-    } else if (temp <= 35) {
-      res.sendFile(__dirname + dbFolder + 'veryColdBeer.json');
-    } else {
-      res.json({msg: 'Too cold', beer_list: 'no beer'});
+    switch (temp) {
+      case (temp >= 60):
+        res.json({msg: 'Too warm', beer_list: 'no beer'});
+        break;
+      case (temp >= 55):
+        res.sendFile(__dirname + dbFolder + 'warmBeer.json');
+        break;
+      case (temp >= 50):
+        res.sendFile(__dirname + dbFolder + 'cellarBeer.json');
+        break;
+      case (temp >= 45):
+        res.sendFile(__dirname + dbFolder + 'coolBeer.json');
+        break;
+      case (temp >= 40):
+        res.sendFile(__dirname + dbFolder + 'coldBeer.json');
+        break;
+      case (temp >= 35):
+        res.sendFile(__dirname + dbFolder + 'veryColdBeer.json');
+        break;
+      default:
+        res.json({msg: 'Too cold', beer_list: 'no beer'});
+        break;
     }
   });
 });
