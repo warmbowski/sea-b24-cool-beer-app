@@ -1,0 +1,10 @@
+/*Style HEADLINE from http://3.7designs.co/blog/2008/06/10-examples-of-beautiful-css-typography-and-how-they-did-it/*/
+
+  .big {
+    font-family: Georgia,"Times New Roman",serif;
+    font-size: 80px;
+    font-weight: bold;
+    color: #600;
+    text-transform: uppercase;
+    letter-spacing: 1px
+  }
