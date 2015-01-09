@@ -1,16 +1,18 @@
-<h1>Modular JS</h1>
-<h3>CommonJS Modules, Clean Code, and Create Your Has-Many app</h3>
+<h1>Is it cold enough to store my beer outside?</h1>
+<h3>Assignment to use external APIs</h3>
 
-<!-- <img src=''/> -->
+<img src='https://travis-ci.org/warmbowski/sea-b24-cool-beer-app.svg'/>
 
-Assignment for CF B24:
+Test out on Heroku: <a href="https://whatbeercansitonmyporch.herokuapp.com/">https://whatbeercansitonmyporch.herokuapp.com/</a>
 
-Create an app that demonstrates you know how to use modules AND includes a has-many relationship.
+Assignment for CF B24:  
 
-For example, write a command line script or (small) express app that has two related resources like classes and students.
+Make a single page web app á la http://www.isitajewishholidaytoday.com/ (Links to an external site.) 
 
-In a has-many relationship, a student could have many classes, or a class could have many students. Your app should print out or visualize that relationship.
+Should geolocate the user using the HTML5 Geolocation API and/or zip code entry and let the user know if it's cold enough to store beer on the porch. (or other non-alcoholic beverage...goat cheese, etc...)
 
-The app should also use clean, modular code. Use module.exports. Follow the separation of concerns principle. Have each resource in a separate file. Use JSHint and JSCS to check your code style.
+Sign up for a wunderground.com API key - they have a free version. 
 
-Submit a PR to your own repo. 
+Use the request npm module to consume the weather underground API module.
+
+Submit a pull request URL - PR to your our empty repo. Include the link to the deployed heroku app on your README.md
