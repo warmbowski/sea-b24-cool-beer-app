@@ -30,3 +30,8 @@ h3 {
 img {
   border-radius: 100%;
 }
+
+#wrapper {
+    max-width: 300px;
+    margin: 0 auto;
+}
