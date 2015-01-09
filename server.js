@@ -13,7 +13,7 @@ app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
-app.use('/', express.static(__dirname + '/public'));
+app.use('/', express.static(__dirname + '/build'));
 
 app.get('/', function(req, res) {
   res.render('index.html');
@@ -36,7 +36,7 @@ app.post('/', function(req, res) {
 
     switch (temp) {
       case (temp >= 60):
-        res.json({msg: 'Too warm', beer_list: 'no beer'});
+        res.json({msg: 'Too warm', temp: '>60°F', beer_list: 'no beer'});
         break;
       case (temp >= 55):
         res.sendFile(__dirname + dbFolder + 'warmBeer.json');
@@ -54,7 +54,7 @@ app.post('/', function(req, res) {
         res.sendFile(__dirname + dbFolder + 'veryColdBeer.json');
         break;
       default:
-        res.json({msg: 'Too cold', beer_list: 'no beer'});
+        res.json({msg: 'Too cold', temp: '<35°F', beer_list: 'no beer'});
         break;
     }
   });

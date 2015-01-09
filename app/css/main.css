@@ -1,0 +1,32 @@
+/*Style HEADLINE from http://3.7designs.co/blog/2008/06/10-examples-of-beautiful-css-typography-and-how-they-did-it/*/
+
+body {
+  font-family: Calibri, 'Segoe UI', Verdana, Sans;
+  background-color: #D5DFE4;
+  color: #030000;
+  text-align: center;
+}
+
+h3 {
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+#list {
+  font-size: 1.5em;
+  line-height: 1.6em;
+}
+
+.big {
+  font-size: 3.3em;
+  text-transform: uppercase;
+  letter-spacing: 1px
+}
+
+.subbig {
+  font-size: 0.7em;
+}
+
+img {
+  border-radius: 100%;
+}
