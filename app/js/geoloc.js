@@ -22,9 +22,9 @@ function geoFindMe() {
       data: {lat: latitude, lon: longitude},
       success: function(data) {
         console.log(data);
-        output.innerHTML = '<p>' + data.msg + '</p>';
+        output.innerHTML = '<p>' + data.msg + '</p><p class="subbig">' + data.temp + '</p>';
         list.innerHTML = '<p>You may store ' + data.beer_list + ' on your porch right now.</p>';
-        $('#out').toggleClass('big');
+        $('.big').css('color', data.color);
       }
     });
 
