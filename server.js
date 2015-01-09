@@ -30,29 +30,26 @@ app.post('/', function(req, res) {
     var parsedData = JSON.parse(wundergRes.text);
     var temp = parsedData.current_observation.temp_f;
 
-    switch (temp) {
-      case (temp >= 60):
-        res.json({msg: 'Too warm', temp: '>60°F', beer_list: 'no beer'});
-        break;
-      case (temp >= 55):
-        res.sendFile(__dirname + dbFolder + 'warmBeer.json');
-        break;
-      case (temp >= 50):
-        res.sendFile(__dirname + dbFolder + 'cellarBeer.json');
-        break;
-      case (temp >= 45):
-        res.sendFile(__dirname + dbFolder + 'coolBeer.json');
-        break;
-      case (temp >= 40):
-        res.sendFile(__dirname + dbFolder + 'coldBeer.json');
-        break;
-      case (temp >= 35):
-        res.sendFile(__dirname + dbFolder + 'veryColdBeer.json');
-        break;
-      default:
-        res.json({msg: 'Too cold', temp: '<35°F', beer_list: 'no beer'});
-        break;
+    if (temp >= 60) {
+      res.json({msg: 'Too warm', temp: '>60°F', beer_list: 'sun tea'});
+    } else if (temp >= 55) {
+      res.sendFile(__dirname + dbFolder + 'warmBeer.json');
+    } else if (temp >= 50) {
+      res.sendFile(__dirname + dbFolder + 'cellarBeer.json');
+    } else if (temp >= 45) {
+      res.sendFile(__dirname + dbFolder + 'coolBeer.json');
+    } else if (temp >= 40) {
+      res.sendFile(__dirname + dbFolder + 'coldBeer.json');
+    } else if (temp >= 35) {
+      res.sendFile(__dirname + dbFolder + 'veryColdBeer.json');
+    } else if (temp >= 32) {
+      res.json({msg: 'Too cold', temp: '<35°F', beer_list: 'soda pop'});
+    } else if (temp < 32) {
+      res.json({msg: 'Too cold', temp: '<32°F', beer_list: 'popsicles'});
+    } else {
+      res.json({msg: 'Something went wrong!', temp: 'Aaaaagh!', beer_list: '!*#$(@'});
     }
+
   });
 });
 
